@@ -10,25 +10,19 @@ They are useful for accessing specific resources using values such as IDs.
 
 ## Basic Route Parameter
 
-\`\`\`javascript
 app.get("/students/:id", (req, res) => {
   res.send(`Student ID: ${req.params.id}`);
 });
-\`\`\`
 
 `:id` is a route parameter.
 
 For:
-
-\`\`\`text
 /students/10
-\`\`\`
 
 The value can be accessed using:
 
-\`\`\`javascript
 req.params.id
-\`\`\`
+
 
 ---
 
@@ -36,25 +30,22 @@ req.params.id
 
 Express stores route parameters inside `req.params`.
 
-\`\`\`javascript
 app.get("/students/:id", (req, res) => {
   res.json(req.params);
 });
-\`\`\`
+
 
 For:
 
-\`\`\`text
 /students/10
-\`\`\`
+
 
 Output:
 
-\`\`\`json
 {
   "id": "10"
 }
-\`\`\`
+
 
 ---
 
@@ -62,26 +53,20 @@ Output:
 
 A route can contain multiple parameters.
 
-\`\`\`javascript
 app.get("/students/:studentId/courses/:courseId", (req, res) => {
   res.json(req.params);
 });
-\`\`\`
 
 For:
 
-\`\`\`text
 /students/10/courses/5
-\`\`\`
 
 Output:
 
-\`\`\`json
 {
   "studentId": "10",
   "courseId": "5"
 }
-\`\`\`
 
 ---
 
@@ -89,13 +74,11 @@ Output:
 
 Route parameter values are received as strings.
 
-\`\`\`javascript
 app.get("/students/:id", (req, res) => {
   const id = Number(req.params.id);
 
   res.send(`Student ID: ${id}`);
 });
-\`\`\`
 
 `Number()` can be used when a numeric value is required.
 
@@ -105,33 +88,27 @@ app.get("/students/:id", (req, res) => {
 
 ### Static Route
 
-\`\`\`javascript
 app.get("/students", (req, res) => {
   res.send("Students Page");
 });
-\`\`\`
 
 This handles only:
 
-\`\`\`text
 /students
-\`\`\`
+
 
 ### Dynamic Route
 
-\`\`\`javascript
 app.get("/students/:id", (req, res) => {
   res.send(`Student ID: ${req.params.id}`);
 });
-\`\`\`
 
 This can handle:
 
-\`\`\`text
 /students/1
 /students/10
 /students/25
-\`\`\`
+
 
 ---
 
