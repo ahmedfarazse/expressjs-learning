@@ -1,7 +1,3 @@
-
-### `03-Route-Parameters/README.md`
-
-```md
 # Express.js Route Parameters
 
 This folder contains Express.js route parameter examples and practice exercises.
