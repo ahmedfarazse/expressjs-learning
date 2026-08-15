@@ -17,6 +17,7 @@ app.get("/students/:id", (req, res) => {
 `:id` is a route parameter.
 
 For:
+
 /students/10
 
 The value can be accessed using:
